@@ -154,11 +154,6 @@ def option2(valid_options, system, player_score, system_score, player_name):
             print(f"{player} no es una opción válida.")
             system_score += 1
             clear_screen()
-        exit_game_again_without_format = input("¿Quires jugar de vuelta? "
-                                               "\n pulsa 'e' para finalizar: ")
-        exit_game = exit_game_again_without_format.lower()
-        if exit_game == "e":
-            break
         count += 1
     return f"Gracias por jugar " \
            f"\n Marcador final: " \
@@ -182,7 +177,7 @@ def option3(valid_options, system, player_score, system_score, player_name, play
             system_round_score += 1
         else:
             print(f"{player_name} ganaste esta ronda!!!")
-            player_round_score += 0
+            player_round_score += 1
         round_count += 1
     return f"Gracias por jugar " \
            f"\n Marcador final: " \
