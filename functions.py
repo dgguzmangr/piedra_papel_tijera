@@ -119,13 +119,14 @@ def option1(valid_options, system, player_score, system_score, player_name):
         else:
             print(f"{player} no es una opción válida.")
             clear_screen()
-        play_again_without_format = input("¿Quires jugar de vuelta? "
+        play_again_without_format = input("¿Quieres jugar de vuelta? "
                                           "\n pulsa 's' para continuar o cualquier letra para finalizar: ")
         play_again = play_again_without_format.lower()
         if play_again != "s":
-            return f"Gracias por jugar " \
-                   f"\n Marcador final: " \
-                   f"\n {player_name}: {player_score} - Máquina: {system_score}"
+            print(f"Gracias por jugar "
+                  f"\n Marcador final: "
+                  f"\n {player_name}: {player_score} - Máquina: {system_score}")
+        return f"Gracias por jugar \n Marcador final: \n {player_name}: {player_score} - Máquina: {system_score}"
 
 
 """
@@ -141,7 +142,7 @@ In case player is not in valid_options a message is printed. The user is then as
 def option2(valid_options, system, player_score, system_score, player_name):
     count = 0
     while count < 3:
-        clear_screen()
+
         player = start(player_name)
         if player in valid_options:
             result = play(player, system, player_score, system_score, player_name)
@@ -153,10 +154,10 @@ def option2(valid_options, system, player_score, system_score, player_name):
         else:
             print(f"{player} no es una opción válida.")
             system_score += 1
-            clear_screen()
+
         count += 1
     return f"Gracias por jugar " \
-           f"\n Marcador final: " \
+           f"\n Marcador final 3/3: " \
            f"\n {player_name}: {player_score} - Máquina: {system_score}"
 
 
@@ -180,7 +181,7 @@ def option3(valid_options, system, player_score, system_score, player_name, play
             player_round_score += 1
         round_count += 1
     return f"Gracias por jugar " \
-           f"\n Marcador final: " \
+           f"\n Marcador de ronda final: " \
            f"\n {player_name}: {player_round_score} - Máquina: {system_round_score}"
 
 
@@ -205,3 +206,6 @@ def menu(valid_options, system, player_score, system_score, player_name, player_
                 continue
             else:
                 return
+        # close_game = input("Para salir de juego presiona (e)")
+        # if close_game == "e":
+            # break
